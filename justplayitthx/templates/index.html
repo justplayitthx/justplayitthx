@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>justplayitthx</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <div id="div">
+      <h1>justplayitthx</h1>
+      <p>your potato can play youtube videos too!</p>
+      <p>insert a youtube video link then click submit</p>
+      <input type="text" id="link" />
+      <input type="submit" id="submit" onclick="Submit()" />
+      <p id="bottomtext">justplayitthx version 2.0, nothavoc</p>
+      <a id="bottomtext" href="https://nothavocc.github.io" target="_blank">my website</a>
+      <marquee id="marquee" direction="right">Welcome!</marquee>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>justplayitthx</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/styles.css') }}"/>
+  </head>
+  <body>
+    <div id="div">
+      <h1>justplayitthx</h1>
+      <h2>{{title}}</h2>
+      <video id="player" width="854" height="480" controls>
+        <source src="{{ url_for('static', filename='videos/' + video_file) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p id="response"></p>
+      <input id="backbutton" type="button" value="back" onclick="HomePage()"> 
+      <p id="bottomtext">justplayitthx version 2.0, nothavoc</p>
+      <a id="bottomtext" href="https://nothavocc.github.io" target="_blank">my website</a>
+      <marquee id="marquee" direction="right">Welcome!</marquee>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

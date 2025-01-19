@@ -1,0 +1,31 @@
+#div {
+    position: grid;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+#backbutton {
+    margin: 1;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#bottomtext {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+marquee {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
