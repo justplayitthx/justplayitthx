@@ -40,7 +40,7 @@ def download_video(url):
     save_path = f"{os.getcwd()}/static/videos/"
     try:
         ydl_opts = {
-            'format': 'bestvideo+bestaudio/best',
+            'format': 'bestvideo[height<=360]+bestaudio/best',
             'outtmpl': os.path.join(save_path, f'{x}.mp4'),
             'merge_output_format': 'mp4',
         }
