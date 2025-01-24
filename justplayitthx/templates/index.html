@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>justplayitthx</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
   </head>
-  <body>
+  <body id="body">
     <div id="div">
       <h1>justplayitthx</h1>
       <p>your potato can play youtube videos too!</p>
@@ -23,7 +24,8 @@
         <option value="1440">1440p</option>
         <option value="2160">2160p (4K)</option>
       </select>
-      <p id="bottomtext">justplayitthx version 2.1, nothavoc</p>
+      <input type="button" id="darkmode" value="Dark Mode" onclick="DarkMode()">
+      <p id="bottomtext">justplayitthx version 2.2, nothavoc</p>
       <a id="bottomtext" href="https://nothavocc.github.io" target="_blank">my website</a>
       <marquee id="marquee" direction="right">Welcome!</marquee>
     </div>

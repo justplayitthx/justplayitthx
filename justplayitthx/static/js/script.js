@@ -1,4 +1,5 @@
 const submitButton = document.getElementById("submit");
+let linkValue = {};
 
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -7,8 +8,16 @@ function getQueryParam(param) {
 
 async function Submit() {
   const linkInput = document.getElementById("link");
-  const resValue = document.getElementById("resolution").value; // Assuming it's an input field
-  const linkValue = linkInput.value.trim();
+  const resValue = document.getElementById("resolution").value;
+  sessionStorage.setItem('linkValue', JSON.stringify({ link: linkInput.value.trim() }));
+  console.log(linkInput.value.trim());
+
+  if (linkInput.value.trim() === "") {
+    alert("link shouldnt be empty!");
+  }
+  if (resValue.trim() === "") {
+    alert("please insert the resolution!");
+  }
 
   const div = document.getElementById("div");
   const waitMessage = document.createElement("p");
@@ -22,7 +31,7 @@ async function Submit() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        link: linkValue,
+        link: linkInput.value.trim(),
         resolution: resValue,
       }),
     });
@@ -44,19 +53,24 @@ async function Submit() {
 
 const messages = [
   "9/10 awful PCs reccomend!",
-  "(almost) no CSS!",
+  "(almost) no CSS! (lie for now)",
   "infinite brainrot consuming",
   "i am a terrible programmer!",
   "your trash PC has a new purpose!",
   "distractionless experience frfr",
-  "dark mode coming soon",
+  "FUCK YEAH DARK MODE IS HERE!!111!",
   "does anyone actually read these?",
   "mmmm default HTML font...",
   "i know your PC is terrible, thats why your here :3",
   "your 1GB of ram will enjoy this!",
+  "I BROKE THE GODDAMN WHEEL",
   "who needs polished UI?",
   "just play it, thx.",
-  "if the website is laggy, dont worry. the server im using is terrible."
+  "if the website is laggy, dont worry. the server im using is terrible.",
+  "fun fact: i was in bed when i came up with this project idea",
+  "even new PCs reccomend!",
+  "google please dont sue me",
+  "someone please try this on a old nokia"
 ];
 
 let index = 0;
@@ -71,3 +85,37 @@ setInterval(changeText, 4000);
 function HomePage() {
   window.location.href = "/goto_index";
 }
+
+function LinkPage() {
+  const linkData = JSON.parse(sessionStorage.getItem('linkValue'));
+  window.open(linkData.link, "_blank");
+}
+
+function DarkMode() {
+  const body = document.getElementById("body");
+  const darkModeEnabled = localStorage.getItem("darkMode") === "true";
+
+  if (darkModeEnabled) {
+    body.style.backgroundColor = "#ffffff";
+    body.style.color = "black";
+    localStorage.setItem("darkMode", "false");
+  } else {
+    body.style.backgroundColor = "#161618";
+    body.style.color = "white";
+    localStorage.setItem("darkMode", "true");
+  }
+}
+
+
+window.onload = function () {
+  const body = document.getElementById("body");
+  const darkModeEnabled = localStorage.getItem("darkMode") === "true";
+
+  if (darkModeEnabled) {
+    body.style.backgroundColor = "#161618";
+    body.style.color = "white";
+  } else {
+    body.style.backgroundColor = "#ffffff";
+    body.style.color = "black";
+  }
+};

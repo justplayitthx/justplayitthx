@@ -1,3 +1,8 @@
+#body {
+    background-color: none;
+    color: none;
+}
+
 #div {
     position: grid;
     margin: auto;
@@ -6,19 +11,29 @@
 }
 
 #backbutton {
-    margin: 1;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    position: grid;
+    margin: auto;
+    text-align: center;
 }
 
 #bottomtext {
     position: absolute;
-    bottom: 30px;
+    bottom: 3vh;
     left: 0;
     width: 100%;
+    text-align: center;
+}
+
+#darkmode {
+    position: fixed;
+    left: 50%;
+    bottom: 7vh;
+    transform: translateX(-50%);
+}
+
+#linkbutton {
+    position: grid;
+    margin: auto;
     text-align: center;
 }
 
@@ -31,15 +46,15 @@ marquee {
 }
 
 .video-container {
-    width: 50%;
+    width: 50vw;
     max-width: 640px;
-    height: 50%;
+    height: 50vh;
     max-height: 360px;
     aspect-ratio: 16 / 9;
     background-color: black;
 }
 
-#video-player {
+#player {
     width: 100%;
     height: 100%;
     object-fit: contain;

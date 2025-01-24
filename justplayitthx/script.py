@@ -3,7 +3,6 @@ import os
 import yt_dlp as ydl
 import shutil
 
-x = 0
 url_file = 'urls.json'
 app = Flask(__name__)
 
@@ -57,6 +56,7 @@ def download_video(url):
         return None
     
 if __name__ == '__main__':
+    x=0
     print("removing video cache...")
     shutil.rmtree(f"{os.getcwd()}/static/videos/")
     os.mkdir(f"{os.getcwd()}/static/videos/")
