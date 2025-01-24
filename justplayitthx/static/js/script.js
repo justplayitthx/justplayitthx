@@ -7,6 +7,7 @@ function getQueryParam(param) {
 
 async function Submit() {
   const linkInput = document.getElementById("link");
+  const resValue = document.getElementById("resolution").value; // Assuming it's an input field
   const linkValue = linkInput.value.trim();
 
   const div = document.getElementById("div");
@@ -20,7 +21,10 @@ async function Submit() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ link: linkValue }),
+      body: JSON.stringify({
+        link: linkValue,
+        resolution: resValue,
+      }),
     });
 
     const data = await response.json();
@@ -28,7 +32,6 @@ async function Submit() {
     if (data.redirect_url) {
       window.location.href = data.redirect_url;
     }
-
   } catch (error) {
     console.error('Error:', error);
     const responseElement = document.getElementById('response');
@@ -37,6 +40,7 @@ async function Submit() {
     }
   }
 }
+
 
 const messages = [
   "9/10 awful PCs reccomend!",

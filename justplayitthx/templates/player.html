@@ -10,10 +10,12 @@
     <div id="div">
       <h1>justplayitthx</h1>
       <h2>{{title}}</h2>
-      <video id="player" width="640" height="360" controls>
-        <source src="{{ url_for('static', filename='videos/' + video_file) }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+      <div id="video-container">
+        <video id="player" controls>
+          <source src="{{ url_for('static', filename='videos/' + video_file) }}" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+      </div>
     <p id="response"></p>
       <input id="backbutton" type="button" value="back" onclick="HomePage()"> 
       <p id="bottomtext">justplayitthx version 2.0, nothavoc</p>

@@ -29,3 +29,18 @@ marquee {
     width: 100%;
     text-align: center;
 }
+
+.video-container {
+    width: 50%;
+    max-width: 640px;
+    height: 50%;
+    max-height: 360px;
+    aspect-ratio: 16 / 9;
+    background-color: black;
+}
+
+#video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

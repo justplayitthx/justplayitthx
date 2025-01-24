@@ -20,7 +20,7 @@ def player():
     video_file = request.args.get('video_file') 
     if not video_file:
         return redirect(url_for('index'))
-    return render_template('player.html', video_file=video_file, title=title)
+    return render_template('player.html', video_file=video_file, title=title, resolution=resolution)
 
 @app.route('/link', methods=['POST'])
 def handle_link():
@@ -29,6 +29,8 @@ def handle_link():
         return jsonify({"error": "Missing 'url' in request"}), 400
 
     link = data['link']
+    global resolution
+    resolution = data['resolution']
     print(f"Received URL: {link}")
     video_file = download_video(link) 
 
@@ -40,7 +42,7 @@ def download_video(url):
     save_path = f"{os.getcwd()}/static/videos/"
     try:
         ydl_opts = {
-            'format': 'bestvideo[height<=360]+bestaudio/best',
+            'format': f'bestvideo[height<={resolution}]+bestaudio/best',
             'outtmpl': os.path.join(save_path, f'{x}.mp4'),
             'merge_output_format': 'mp4',
         }
