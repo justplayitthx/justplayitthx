@@ -44,22 +44,30 @@ def handle_link():
 def download_video(url):
     global x
     x += 1
-    save_path = f"{os.getcwd()}/static/videos/"
+    save_path = os.path.join(os.getcwd(), "static/videos")
+    output_file = os.path.join(save_path, f"{x}.mp4") 
+
     try:
         ydl_opts = {
             'format': f'bestvideo[height<={resolution}]+bestaudio/best',
-            'outtmpl': os.path.join(save_path, f'{x}.mp4'),
+            'outtmpl': output_file,     
             'merge_output_format': 'mp4',
+            'noplaylist': True,
+            'quiet': False,
+            'restrictfilenames': True,    
+            'overwrites': True,
         }
+
         with ydl.YoutubeDL(ydl_opts) as ydl_instance:
             info_dict = ydl_instance.extract_info(url, download=True)
             global title
             title = info_dict.get('title', None)
             print(f"Downloaded: {info_dict['title']}")
-            return f'{x}.mp4' 
+            return f"{x}.mp4"
     except Exception as e:
         print(f"Error: {e}")
         return None
+
     
 if __name__ == '__main__':
     x=0
