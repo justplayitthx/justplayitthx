@@ -53,9 +53,11 @@ def download_video(url):
             'outtmpl': output_file,     
             'merge_output_format': 'mp4',
             'noplaylist': True,
-            'quiet': False,
+            'no_warnings': True,
             'restrictfilenames': True,    
-            'overwrites': True,
+            'writesubtitles': False,
+            'writeinfojson': False,       
+            'writethumbnail': False,
         }
 
         with ydl.YoutubeDL(ydl_opts) as ydl_instance:
