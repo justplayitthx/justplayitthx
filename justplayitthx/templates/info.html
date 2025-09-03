@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>justplayitthx</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body id="body">
+    <div id="div">
+      <h1>justplayitthx FAQ</h1>
+      <h2>1 .why is it kinda slow.. ish?</h2>
+      <p>my wifi isnt exactly the best thing, the server also isnt but its fine for light sites like these. this project is fully selfhosted (with the help of cf tunnels cause i dont have port forwarding). one day i might get a VPS but i have no idea when and if it will have enough power/storage to run this site.</p>
+      <h2>2. this doesnt work on [insert old broswer]!!!1111</h2>
+      <p>some old browsers might not work, because this website still uses modern frameworks (like javascript). i will try to make it support more old browsers, but the current focus for me is to make a low memory and distraction free youtube experience.</p>
+      <h2>3. what do i need to have installed?</h2>
+      <p>basically nothing. this is a purely web experience and doesnt need any external software installation, except (obviously) a internet connection and a supported browser. however, some browsers may be too old for jpit. but most semi-new browser are supported on, example: XP and 7.</p>        
+      <h2>4. what is this site even for???</h2>
+      <p>this is a low-memory, distraction free and minimal youtube client, basically it downloads a video on our server then your shitty machine can play it without hassle and gui distractions.</p>
+      <input id="backbutton" type="button" value="back" onclick="HomePage()">
+      <input type="button" id="darkmode" value="Dark Mode" onclick="DarkMode()">
+      <p id="bottomtext">justplayitthx version 2.3, nothavoc</p>
+      <div id="bottomtext">
+        <a href="https://nothavocc.github.io" target="_blank">my website</a>
+        <a href="info.html">info</a>
+      </div>
+      <marquee id="marquee" direction="right">Welcome!</marquee>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

@@ -52,8 +52,9 @@ async function Submit() {
 
 
 const messages = [
+  "FINALLY, A OFFICIAL WEBSITE!!!",
   "9/10 awful PCs reccomend!",
-  "(almost) no CSS! (lie for now)",
+  "minimal CSS!",
   "infinite brainrot consuming",
   "i am a terrible programmer!",
   "your trash PC has a new purpose!",
@@ -70,7 +71,18 @@ const messages = [
   "fun fact: i was in bed when i came up with this project idea",
   "even new PCs reccomend!",
   "google please dont sue me",
-  "someone please try this on a old nokia"
+  "someone please try this on a old nokia",
+  "roll or die",
+  "follow me on tiktok!!! @havoc.tech",
+  "coffee spelt backwards is eeffoc, which is funny...",
+  "...because untill i had my coffee i dont give EEFFOC xDDDD",
+  "this site kinda sucks",
+  "ADRIAN, EXPLAIN OUR WEBSITE",
+  "follow douxxpi on tiktok, he is cool",
+  "donate to me plspls (so we can get better speeds)",
+  "your xp shitbox can be useful for once!",
+  "raspberry pis reccomend too!",
+  "this is hosted on a pentium 4 machine btw"
 ];
 
 let index = 0;

@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for, s
 import os
 import yt_dlp as ydl
 import shutil
+import time
+import threading
 
 url_file = 'urls.json'
 app = Flask(__name__)
@@ -20,6 +22,10 @@ def player():
     if not video_file:
         return redirect(url_for('index'))
     return render_template('player.html', video_file=video_file, title=title, resolution=resolution)
+
+@app.route('/info')
+def info():
+    return render_template('info.html')
 
 @app.route('/link', methods=['POST'])
 def handle_link():
@@ -61,3 +67,16 @@ if __name__ == '__main__':
     shutil.rmtree(f"{os.getcwd()}/static/videos/")
     os.mkdir(f"{os.getcwd()}/static/videos/")
     app.run(port=5000)
+
+
+def clear_cache_every_10_minutes():
+    while True:
+        print("Removing video cache...")
+        cache_path = os.path.join(os.getcwd(), "static", "videos")
+        if os.path.exists(cache_path):
+            shutil.rmtree(cache_path)
+        os.mkdir(cache_path)
+        print("Cache cleared.")
+        time.sleep(600)
+
+threading.Thread(target=clear_cache_every_10_minutes, daemon=True).start()
