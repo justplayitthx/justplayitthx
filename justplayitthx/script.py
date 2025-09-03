@@ -49,9 +49,8 @@ def download_video(url):
 
     try:
         ydl_opts = {
-            'format': f'bestvideo[height<={resolution}]+bestaudio/best',
+            'format': f'best[height<={resolution}]',
             'outtmpl': output_file,     
-            'merge_output_format': 'mp4',
             'noplaylist': True,
             'no_warnings': True,
             'restrictfilenames': True,    
@@ -64,11 +63,12 @@ def download_video(url):
             info_dict = ydl_instance.extract_info(url, download=True)
             global title
             title = info_dict.get('title', None)
-            print(f"Downloaded: {info_dict['title']}")
+            print(f"Downloaded: {title}")
             return f"{x}.mp4"
     except Exception as e:
         print(f"Error: {e}")
         return None
+
 
     
 if __name__ == '__main__':
